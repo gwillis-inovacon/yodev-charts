@@ -1,0 +1,42 @@
+# Netlify Configuration for yoDEV Charts
+
+[build]
+  # Publish directory (root of the project)
+  publish = "."
+  
+  # No build command needed - static HTML files
+  command = ""
+
+# Redirect rules
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+
+# Headers for all pages
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache static assets
+[[headers]]
+  for = "/charts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# Pretty URLs (optional)
+[[redirects]]
+  from = "/charts/:chart"
+  to = "/charts/:chart.html"
+  status = 200
+
+# 404 handling
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404

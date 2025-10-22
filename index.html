@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yoDEV Charts - Interactive Data Visualizations</title>
+    
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:title" content="yoDEV Charts - Interactive Data Visualizations">
+    <meta property="og:description" content="Explore interactive financial charts and data visualizations for the yoDEV community">
+    <meta property="og:type" content="website">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen">
+    
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold text-slate-900">yoDEV Charts</h1>
+                    <p class="text-slate-600 mt-1">Interactive Data Visualizations</p>
+                </div>
+                <a href="https://yodev.dev" target="_blank" class="text-blue-600 hover:text-blue-700 font-medium">
+                    ← Back to yoDEV
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Intro Section -->
+        <div class="mb-12 text-center">
+            <h2 class="text-2xl font-bold text-slate-800 mb-3">
+                📊 Financial Market Insights & Analysis
+            </h2>
+            <p class="text-slate-600 max-w-2xl mx-auto">
+                Explore our collection of interactive charts analyzing global capital markets, 
+                trends, and economic data. Click any chart to view the full interactive visualization.
+            </p>
+        </div>
+
+        <!-- Charts Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Chart 1: Global Equity Returns -->
+            <a href="./charts/global-equity-2025.html" class="block">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                        <div class="text-white text-center p-6">
+                            <svg class="w-16 h-16 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                            <h3 class="text-xl font-bold">Global Equity Returns 2025</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-slate-600 mb-4">
+                            Compare year-to-date performance across major global indices including 
+                            Hang Seng, DAX 40, MSCI EM, and S&P 500.
+                        </p>
+                        <div class="flex items-center text-blue-600 font-medium">
+                            View Chart
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Chart 2: April Volatility -->
+            <a href="./charts/april-volatility-2025.html" class="block">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
+                    <div class="h-48 bg-gradient-to-br from-red-500 to-orange-600 flex items-center justify-center">
+                        <div class="text-white text-center p-6">
+                            <svg class="w-16 h-16 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                            </svg>
+                            <h3 class="text-xl font-bold">April 2025 Market Crash</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-slate-600 mb-4">
+                            Track the dramatic market decline and rapid recovery following 
+                            Liberation Day tariff announcements and subsequent policy shifts.
+                        </p>
+                        <div class="flex items-center text-blue-600 font-medium">
+                            View Chart
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Chart 3: Annual Returns Comparison -->
+            <a href="./charts/annual-returns-2023-2025.html" class="block">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
+                        <div class="text-white text-center p-6">
+                            <svg class="w-16 h-16 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <h3 class="text-xl font-bold">Annual Returns 2023-2025</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-slate-600 mb-4">
+                            Three-year comparison of U.S., developed international, and emerging 
+                            market performance showing the great rotation of 2025.
+                        </p>
+                        <div class="flex items-center text-blue-600 font-medium">
+                            View Chart
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Info Section -->
+        <div class="mt-16 bg-white rounded-xl shadow-md p-8">
+            <h3 class="text-2xl font-bold text-slate-800 mb-4">About These Charts</h3>
+            <div class="prose prose-slate max-w-none">
+                <p class="text-slate-600 mb-4">
+                    These interactive visualizations are created for the yoDEV community to provide 
+                    clear, data-driven insights into global financial markets and economic trends.
+                </p>
+                <p class="text-slate-600 mb-4">
+                    All charts are built with modern web technologies (React, Recharts) and are 
+                    fully interactive—hover over data points for detailed information, and explore 
+                    the trends that shape our global economy.
+                </p>
+                <div class="flex flex-wrap gap-4 mt-6">
+                    <div class="flex items-center text-slate-600">
+                        <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        Interactive & Responsive
+                    </div>
+                    <div class="flex items-center text-slate-600">
+                        <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        Data from Trusted Sources
+                    </div>
+                    <div class="flex items-center text-slate-600">
+                        <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        Regularly Updated
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center text-slate-600">
+                <p class="mb-2">Built with ❤️ for the <a href="https://yodev.dev" class="text-blue-600 hover:text-blue-700 font-medium">yoDEV community</a></p>
+                <p class="text-sm text-slate-500">Data visualizations powered by React & Recharts</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annual Returns 2023-2025 - yoDEV Charts</title>
+
+    <!-- OpenGraph Meta Tags for Discourse -->
+    <meta property="og:title" content="Global Market Returns: 2023-2025">
+    <meta property="og:description" content="Three-year comparison of U.S., developed international, and emerging market performance showing the great rotation of 2025">
+    <meta property="og:type" content="website">
+
+    <!-- React & Recharts from CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/recharts@2.12.0/dist/Recharts.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="m-0 p-0">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } = Recharts;
+
+        function AnnualReturnsComparison() {
+          const data = [
+            {
+              year: '2023',
+              'S&P 500': 24.0,
+              'MSCI EAFE': 18.2,
+              'MSCI EM': 9.8
+            },
+            {
+              year: '2024',
+              'S&P 500': 23.0,
+              'MSCI EAFE': 3.8,
+              'MSCI EM': 7.5
+            },
+            {
+              year: '2025 YTD',
+              'S&P 500': 12.5,
+              'MSCI EAFE': 15.2,
+              'MSCI EM': 30.1
+            }
+          ];
+
+          const colors = {
+            'S&P 500': '#8b5cf6',
+            'MSCI EAFE': '#3b82f6',
+            'MSCI EM': '#10b981'
+          };
+
+          return React.createElement('div', { className: "w-full h-full min-h-screen p-4 sm:p-8 bg-gradient-to-br from-slate-50 to-slate-100" },
+            React.createElement('div', { className: "max-w-5xl mx-auto bg-white rounded-xl shadow-lg p-4 sm:p-8" },
+              React.createElement('div', { className: "mb-4" },
+                React.createElement('a', {
+                  href: '../index.html',
+                  className: "inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm mb-4"
+                },
+                  '← Back to Gallery'
+                )
+              ),
+              React.createElement('h2', { className: "text-2xl sm:text-3xl font-bold text-slate-800 mb-2" },
+                'Global Market Returns: 2023-2025'
+              ),
+              React.createElement('p', { className: "text-slate-600 mb-6 text-sm sm:text-base" },
+                'Comparing U.S., developed international, and emerging market performance'
+              ),
+
+              React.createElement(ResponsiveContainer, { width: "100%", height: 450 },
+                React.createElement(BarChart, { data: data, margin: { top: 20, right: 30, left: 20, bottom: 80 } },
+                  React.createElement(CartesianGrid, { strokeDasharray: "3 3", stroke: "#e2e8f0" }),
+                  React.createElement(XAxis, {
+                    dataKey: "year",
+                    tick: { fill: '#475569', fontSize: 14, fontWeight: 500 },
+                    height: 60
+                  }),
+                  React.createElement(YAxis, {
+                    label: { value: 'Total Return (%)', angle: -90, position: 'insideLeft', style: { fill: '#475569' } },
+                    tick: { fill: '#475569' }
+                  }),
+                  React.createElement(Tooltip, {
+                    contentStyle: {
+                      backgroundColor: '#fff',
+                      border: '1px solid #e2e8f0',
+                      borderRadius: '8px',
+                      boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'
+                    },
+                    formatter: (value) => `${value}%`
+                  }),
+                  React.createElement(Legend, {
+                    wrapperStyle: { paddingTop: '20px' },
+                    iconType: "rect"
+                  }),
+                  React.createElement(Bar, { dataKey: "S&P 500", fill: colors['S&P 500'], radius: [8, 8, 0, 0] }),
+                  React.createElement(Bar, { dataKey: "MSCI EAFE", fill: colors['MSCI EAFE'], radius: [8, 8, 0, 0] }),
+                  React.createElement(Bar, { dataKey: "MSCI EM", fill: colors['MSCI EM'], radius: [8, 8, 0, 0] })
+                )
+              ),
+
+              React.createElement('div', { className: "grid grid-cols-1 md:grid-cols-3 gap-4 mt-8" },
+                React.createElement('div', { className: "p-4 bg-purple-50 rounded-lg border border-purple-200" },
+                  React.createElement('div', { className: "flex items-center gap-2 mb-2" },
+                    React.createElement('div', { className: "w-4 h-4 rounded", style: { backgroundColor: colors['S&P 500'] } }),
+                    React.createElement('div', { className: "font-semibold text-slate-800" }, 'S&P 500')
+                  ),
+                  React.createElement('div', { className: "text-sm text-slate-600" },
+                    'U.S. large-cap stocks dominated 2023-2024, driven by tech and AI enthusiasm. Performance moderated in 2025.'
+                  )
+                ),
+                React.createElement('div', { className: "p-4 bg-blue-50 rounded-lg border border-blue-200" },
+                  React.createElement('div', { className: "flex items-center gap-2 mb-2" },
+                    React.createElement('div', { className: "w-4 h-4 rounded", style: { backgroundColor: colors['MSCI EAFE'] } }),
+                    React.createElement('div', { className: "font-semibold text-slate-800" }, 'MSCI EAFE')
+                  ),
+                  React.createElement('div', { className: "text-sm text-slate-600" },
+                    'Developed international markets (Europe, Japan) lagged in 2024 but rebounded strongly in 2025 with fiscal support.'
+                  )
+                ),
+                React.createElement('div', { className: "p-4 bg-green-50 rounded-lg border border-green-200" },
+                  React.createElement('div', { className: "flex items-center gap-2 mb-2" },
+                    React.createElement('div', { className: "w-4 h-4 rounded", style: { backgroundColor: colors['MSCI EM'] } }),
+                    React.createElement('div', { className: "font-semibold text-slate-800" }, 'MSCI EM')
+                  ),
+                  React.createElement('div', { className: "text-sm text-slate-600" },
+                    'Emerging markets surged 30% in 2025 YTD, led by China\'s policy support and Hong Kong\'s IPO revival.'
+                  )
+                )
+              ),
+
+              React.createElement('div', { className: "mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200" },
+                React.createElement('p', { className: "text-sm text-slate-700 mb-2" },
+                  React.createElement('strong', null, 'The Great Rotation of 2025: '),
+                  'After a decade of U.S. outperformance (averaging 13.8% annually vs. global stocks\' 4.9%), international markets staged a dramatic comeback in 2025.'
+                ),
+                React.createElement('div', { className: "flex flex-wrap gap-4 mt-3 text-xs text-slate-600" },
+                  React.createElement('div', null,
+                    React.createElement('span', { className: "font-semibold" }, '2023-2024: '),
+                    'U.S. tech giants dominated'
+                  ),
+                  React.createElement('div', null,
+                    React.createElement('span', { className: "font-semibold" }, '2025: '),
+                    'Emerging markets & Europe lead'
+                  ),
+                  React.createElement('div', null,
+                    React.createElement('span', { className: "font-semibold" }, 'Drivers: '),
+                    'Policy shifts, valuations, tariff uncertainty'
+                  )
+                )
+              ),
+
+              React.createElement('div', { className: "mt-4 text-xs text-slate-500" },
+                'Sources: Fidelity, U.S. Bank, J.P. Morgan Research, Visual Capitalist (2025 YTD through October)'
+              )
+            )
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(AnnualReturnsComparison));
+    </script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</body>
+</html>

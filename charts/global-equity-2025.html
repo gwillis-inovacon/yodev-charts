@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Global Equity Returns - yoDEV Charts</title>
+
+    <!-- OpenGraph Meta Tags for Discourse -->
+    <meta property="og:title" content="2025 Global Equity Returns">
+    <meta property="og:description" content="Year-to-date performance comparison across major global indices including Hang Seng, DAX 40, MSCI EM, and S&P 500">
+    <meta property="og:type" content="website">
+
+    <!-- React & Recharts from CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/recharts@2.12.0/dist/Recharts.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="m-0 p-0">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } = Recharts;
+
+        function GlobalEquityReturns() {
+          const data = [
+            { index: 'Hang Seng', return: 19.3, color: '#ef4444' },
+            { index: 'DAX 40', return: 18.1, color: '#3b82f6' },
+            { index: 'MSCI EM', return: 30.1, color: '#10b981' },
+            { index: 'S&P 500', return: 12.5, color: '#8b5cf6' }
+          ];
+
+          return React.createElement('div', { className: "w-full h-full min-h-screen p-4 sm:p-8 bg-gradient-to-br from-slate-50 to-slate-100" },
+            React.createElement('div', { className: "max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-4 sm:p-8" },
+              React.createElement('div', { className: "mb-4" },
+                React.createElement('a', {
+                  href: '../index.html',
+                  className: "inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm mb-4"
+                },
+                  '← Back to Gallery'
+                )
+              ),
+              React.createElement('h2', { className: "text-2xl sm:text-3xl font-bold text-slate-800 mb-2" },
+                '2025 Global Equity Returns'
+              ),
+              React.createElement('p', { className: "text-slate-600 mb-6 text-sm sm:text-base" },
+                'Year-to-date performance through October 2025'
+              ),
+
+              React.createElement(ResponsiveContainer, { width: "100%", height: 400 },
+                React.createElement(BarChart, { data: data, margin: { top: 20, right: 30, left: 20, bottom: 60 } },
+                  React.createElement(CartesianGrid, { strokeDasharray: "3 3", stroke: "#e2e8f0" }),
+                  React.createElement(XAxis, {
+                    dataKey: "index",
+                    angle: -45,
+                    textAnchor: "end",
+                    height: 80,
+                    tick: { fill: '#475569', fontSize: 14 }
+                  }),
+                  React.createElement(YAxis, {
+                    label: { value: 'Return (%)', angle: -90, position: 'insideLeft', style: { fill: '#475569' } },
+                    tick: { fill: '#475569' }
+                  }),
+                  React.createElement(Tooltip, {
+                    contentStyle: {
+                      backgroundColor: '#fff',
+                      border: '1px solid #e2e8f0',
+                      borderRadius: '8px',
+                      boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'
+                    },
+                    formatter: (value) => `${value}%`
+                  }),
+                  React.createElement(Bar, { dataKey: "return", radius: [8, 8, 0, 0] },
+                    data.map((entry, index) =>
+                      React.createElement(Cell, { key: `cell-${index}`, fill: entry.color })
+                    )
+                  )
+                )
+              ),
+
+              React.createElement('div', { className: "mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200" },
+                React.createElement('p', { className: "text-sm text-slate-700" },
+                  React.createElement('strong', null, 'Note: '),
+                  '2025 marked a shift in global market leadership, with emerging markets and international equities outperforming U.S. stocks—reversing a decade-long trend of U.S. dominance.'
+                )
+              ),
+
+              React.createElement('div', { className: "mt-4 text-xs text-slate-500" },
+                'Sources: J.P. Morgan Research, Visual Capitalist, U.S. Bank Asset Management (October 2025)'
+              )
+            )
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(GlobalEquityReturns));
+    </script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</body>
+</html>
