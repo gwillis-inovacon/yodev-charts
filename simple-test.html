@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Test</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-is@18/umd/react-is.production.min.js"></script>
+    <script src="https://unpkg.com/recharts/umd/Recharts.min.js"></script>
+</head>
+<body>
+    <h1>Library Check</h1>
+    <div id="output"></div>
+    <script>
+        const output = document.getElementById('output');
+        let html = '';
+
+        html += '<p>React: ' + (typeof React) + '</p>';
+        html += '<p>ReactDOM: ' + (typeof ReactDOM) + '</p>';
+        html += '<p>Recharts: ' + (typeof Recharts) + '</p>';
+
+        if (typeof window.Recharts !== 'undefined') {
+            html += '<p style="color: green">✓ Recharts loaded!</p>';
+            html += '<p>Available components: ' + Object.keys(window.Recharts).slice(0, 10).join(', ') + '...</p>';
+        } else {
+            html += '<p style="color: red">✗ Recharts NOT loaded</p>';
+            html += '<p>Window properties: ' + Object.keys(window).filter(k => k.includes('echart')).join(', ') + '</p>';
+        }
+
+        output.innerHTML = html;
+    </script>
+</body>
+</html>
