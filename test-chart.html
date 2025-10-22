@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Chart</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/recharts@2.12.0/dist/Recharts.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-8 bg-gray-100">
+    <div id="root"></div>
+
+    <script>
+        console.log('React:', typeof React);
+        console.log('ReactDOM:', typeof ReactDOM);
+        console.log('Recharts:', typeof Recharts);
+        console.log('Recharts object:', Recharts);
+
+        if (typeof Recharts !== 'undefined') {
+            const { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } = Recharts;
+
+            const data = [
+                { name: 'A', value: 10 },
+                { name: 'B', value: 20 },
+                { name: 'C', value: 15 }
+            ];
+
+            const App = () => {
+                return React.createElement('div', { className: "max-w-4xl mx-auto bg-white p-8 rounded shadow" },
+                    React.createElement('h1', { className: "text-2xl font-bold mb-4" }, 'Test Chart'),
+                    React.createElement(ResponsiveContainer, { width: "100%", height: 300 },
+                        React.createElement(BarChart, { data: data },
+                            React.createElement(CartesianGrid, { strokeDasharray: "3 3" }),
+                            React.createElement(XAxis, { dataKey: "name" }),
+                            React.createElement(YAxis, null),
+                            React.createElement(Tooltip, null),
+                            React.createElement(Bar, { dataKey: "value", fill: "#3b82f6" })
+                        )
+                    )
+                );
+            };
+
+            const root = ReactDOM.createRoot(document.getElementById('root'));
+            root.render(React.createElement(App));
+            console.log('Chart rendered!');
+        } else {
+            console.error('Recharts not loaded!');
+            document.getElementById('root').innerHTML = '<p class="text-red-600">Recharts library failed to load</p>';
+        }
+    </script>
+</body>
+</html>
