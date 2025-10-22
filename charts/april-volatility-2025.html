@@ -20,6 +20,9 @@
         import ReactDOM from 'https://esm.sh/react-dom@18/client';
         import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine, Area, ComposedChart } from 'https://esm.sh/recharts@2.12.7';
 
+        window.React = React;
+        window.ReactDOM = ReactDOM;
+
         function AprilVolatilityTimeline() {
           const data = [
             { date: 'Feb 19', value: 0, label: 'Peak', event: '' },
